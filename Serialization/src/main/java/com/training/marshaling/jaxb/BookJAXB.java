@@ -1,12 +1,10 @@
 package com.training.marshaling.jaxb;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @XmlRootElement(name = "bookJAXB")
+@XmlAccessorType(XmlAccessType.NONE)
 public class BookJAXB extends StuffJAXB{
 
     public BookJAXB(Long id, String title, int numberOfPages, int yearOfEdition, double cost) {

@@ -1,8 +1,9 @@
 package com.training.marshaling.jaxb;
 
 
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType
 public abstract class StuffJAXB {
     private Long id;
 
