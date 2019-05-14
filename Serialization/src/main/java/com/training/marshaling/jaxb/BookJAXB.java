@@ -3,7 +3,6 @@ package com.training.marshaling.jaxb;
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
-@XmlRootElement(name = "bookJAXB")
 @XmlAccessorType(XmlAccessType.NONE)
 public class BookJAXB extends StuffJAXB{
 
@@ -27,7 +26,7 @@ public class BookJAXB extends StuffJAXB{
     public String getTitle() {
         return title;
     }
-    @XmlAttribute
+    @XmlElement
     public void setTitle(String title) {
         this.title = title;
     }
@@ -54,7 +53,7 @@ public class BookJAXB extends StuffJAXB{
     public int getNumberOfPages() {
         return numberOfPages;
     }
-    @XmlAttribute
+    @XmlElement
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
@@ -62,7 +61,7 @@ public class BookJAXB extends StuffJAXB{
     public int getYearOfEdition() {
         return yearOfEdition;
     }
-    @XmlAttribute
+    @XmlElement
     public void setYearOfEdition(int yearOfEdition) {
         this.yearOfEdition = yearOfEdition;
     }
@@ -70,7 +69,7 @@ public class BookJAXB extends StuffJAXB{
     public double getCost() {
         return cost;
     }
-    @XmlAttribute
+    @XmlElement
     public void setCost(double cost) {
         this.cost = cost;
     }

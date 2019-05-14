@@ -5,6 +5,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,14 +17,36 @@ public class MainJAXB {
         DataObjJAXB dataObjJAXB = new DataObjJAXB();
         dataObjJAXB.setId(1);
         ReaderJAXB readerJAXB= new ReaderJAXB("Oleg", "Sergeenko");
+        dataObjJAXB.setReaderJAXBS(new ReaderJAXB[] {readerJAXB});
+
+        // first book
         BookJAXB bookJAXB = new BookJAXB();
         AuthorAndGenreJAXB authorAndGenreJAXB = new AuthorAndGenreJAXB("Victor", "Pelevin", "fiction");
         bookJAXB.setAuthorAndGenreJAXB(authorAndGenreJAXB);
         bookJAXB.setTitle("Generation P");
         bookJAXB.setCost(450.00);
+        bookJAXB.setId(500L);
         bookJAXB.setNumberOfPages(300);
         bookJAXB.setYearOfEdition(2003);
         bookJAXB.setAuthorAndGenreJAXB(authorAndGenreJAXB);
+
+        List<BookJAXB> books = new ArrayList<>();
+        books.add(bookJAXB);
+
+        // second book
+        bookJAXB = new BookJAXB();
+        authorAndGenreJAXB = new AuthorAndGenreJAXB("Gustav", "Flober", "history");
+        bookJAXB.setAuthorAndGenreJAXB(authorAndGenreJAXB);
+        bookJAXB.setTitle("Spartak");
+        bookJAXB.setCost(450.00);
+        bookJAXB.setId(500L);
+        bookJAXB.setNumberOfPages(234);
+        bookJAXB.setYearOfEdition(2003);
+        bookJAXB.setAuthorAndGenreJAXB(authorAndGenreJAXB);
+
+        books.add(bookJAXB);
+
+        readerJAXB.setBooks(books);
 
 //        AuthorAndGenreJAXB authorAndGenreJAXB1 = new AuthorAndGenreJAXB("Stiven", "King", "horror");
 
@@ -30,7 +54,7 @@ public class MainJAXB {
             /*File file = new File(System.getProperty("user.dir")
                     + File.separator + "storeXML.xml");*/
             File file = new File(String
-                    .format("%s%s", MainJAXB.class.getClass().getResource("/").getPath(), "storeXML.xml"));
+                    .format("%s%s", MainJAXB.class.getResource("/").getPath(), "storeXML.xml"));
 
 
             JAXBContext context = JAXBContext.newInstance(DataObjJAXB.class);
