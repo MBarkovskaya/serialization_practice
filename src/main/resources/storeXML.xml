@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataObjJAXB id="1">
+    <readerJAXBS firstName="Oleg" lastName="Sergeenko">
+        <books>
+            <book>
+                <id>500</id>
+                <authorAndGenreJAXB>
+                    <firstName>Victor</firstName>
+                    <genre>fiction</genre>
+                    <lastName>Pelevin</lastName>
+                </authorAndGenreJAXB>
+                <cost>450.0</cost>
+                <numberOfPages>300</numberOfPages>
+                <title>Generation P</title>
+                <yearOfEdition>2003</yearOfEdition>
+            </book>
+            <book>
+                <id>500</id>
+                <authorAndGenreJAXB>
+                    <firstName>Gustav</firstName>
+                    <genre>history</genre>
+                    <lastName>Flober</lastName>
+                </authorAndGenreJAXB>
+                <cost>450.0</cost>
+                <numberOfPages>234</numberOfPages>
+                <title>Spartak</title>
+                <yearOfEdition>2003</yearOfEdition>
+            </book>
+        </books>
+    </readerJAXBS>
+</dataObjJAXB>

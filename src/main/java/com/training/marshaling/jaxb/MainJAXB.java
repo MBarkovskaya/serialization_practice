@@ -1,5 +1,7 @@
 package com.training.marshaling.jaxb;
 
+import com.training.marshaling.json.AuthorAndGenreJSON;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -35,7 +37,7 @@ public class MainJAXB {
 
         // second book
         bookJAXB = new BookJAXB();
-        authorAndGenreJAXB = new AuthorAndGenreJAXB("Gustav", "Flober", "history");
+        authorAndGenreJAXB = new AuthorAndGenreJAXB("Raffaello", "Giovagnoli", "history");
         bookJAXB.setAuthorAndGenreJAXB(authorAndGenreJAXB);
         bookJAXB.setTitle("Spartak");
         bookJAXB.setCost(450.00);
@@ -53,8 +55,7 @@ public class MainJAXB {
         try {
             /*File file = new File(System.getProperty("user.dir")
                     + File.separator + "storeXML.xml");*/
-            File file = new File(String
-                    .format("%s%s", MainJAXB.class.getResource("/").getPath(), "storeXML.xml"));
+            File file = new File("src/main/resources/storeXML.xml");
 
 
             JAXBContext context = JAXBContext.newInstance(DataObjJAXB.class);
