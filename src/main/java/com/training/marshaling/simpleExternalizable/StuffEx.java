@@ -1,6 +1,9 @@
 package com.training.marshaling.simpleExternalizable;
 
-import java.io.*;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 public abstract class StuffEx implements Externalizable {
 
@@ -15,12 +18,12 @@ public abstract class StuffEx implements Externalizable {
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-
+        out.writeLong(getId());
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-
+        in.readLong();
     }
 
     public Long getId() {

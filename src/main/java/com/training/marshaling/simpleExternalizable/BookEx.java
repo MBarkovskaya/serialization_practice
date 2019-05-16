@@ -1,12 +1,17 @@
 package com.training.marshaling.simpleExternalizable;
 
-import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.List;
 
-public class BookEx extends StuffEx implements Externalizable {
+public class BookEx extends StuffEx {
+
+    private String title;
+    private List<AuthorEx> authors;
+    private int numberOfPages;
+    private int yearOfEdition;
+    private double cost;
 
     public BookEx(Long id, String title, List<AuthorEx> authors, int numberOfPages, int yearOfEdition, double cost) {
         super(id);
@@ -17,23 +22,27 @@ public class BookEx extends StuffEx implements Externalizable {
         this.cost = cost;
     }
 
-    private String title;
-    private List<AuthorEx> authors;
-    private int numberOfPages;
-    private int yearOfEdition;
-    private double cost;
-
     public BookEx() {
     }
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-
+        super.writeExternal(out);
+        out.writeUTF(title);
+        out.writeObject(authors);
+        out.writeInt(numberOfPages);
+        out.writeInt(yearOfEdition);
+        out.writeDouble(cost);
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-
+        super.readExternal(in);
+        this.title = in.readUTF();
+        this.authors = (List<AuthorEx>) in.readObject();
+        this.numberOfPages = in.readInt();
+        this.yearOfEdition = in.readInt();
+        this.cost = in.readDouble();
     }
 
     public String getTitle() {

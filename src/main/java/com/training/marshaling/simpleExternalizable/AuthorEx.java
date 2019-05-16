@@ -22,12 +22,16 @@ public class AuthorEx implements Externalizable {
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-
+        out.writeUTF(firstName);
+        out.writeUTF(lastName);
+        out.writeUTF(genre);
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-
+        this.firstName = in.readUTF();
+        this.lastName = in.readUTF();
+        this.genre = in.readUTF();
     }
 
     public String getFirstName() {

@@ -18,17 +18,23 @@ public class ReaderEx implements Externalizable {
     }
 
     public ReaderEx(String firstName, String lastName, ArrayList<BookEx> books) {
-
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.books = books;
     }
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-
+        out.writeUTF(firstName);
+        out.writeUTF(lastName);
+        out.writeObject(books);
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-
+        this.firstName = in.readUTF();
+        this.lastName = in.readUTF();
+        this.books = (List<BookEx>) in.readObject();
     }
 
     public String getFirstName() {

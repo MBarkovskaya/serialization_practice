@@ -15,8 +15,8 @@ public class MainEx {
         System.out.println(author1);
         System.out.println(author2);
 
-        BookEx book1 = new BookEx(1L, "Generation P", new ArrayList<>(Arrays.asList(author1)), 300, 2003, 450.00);
-        BookEx book2 = new BookEx(2L, "Оно", new ArrayList<>(Arrays.asList(author2)), 500, 2014, 950.50);
+        BookEx book1 = new BookEx(1L, "Generation P", Arrays.asList(author1), 300, 2003, 450.00);
+        BookEx book2 = new BookEx(2L, "Оно", Arrays.asList(author2), 500, 2014, 950.50);
 
         System.out.println(book1);
         System.out.println(book2);
@@ -30,7 +30,7 @@ public class MainEx {
 
             ReaderEx readerNew = (ReaderEx) inputStream.readObject();
             System.out.println(readerNew);
-            System.out.println(reader == readerNew);
+            System.out.println(reader.equals(readerNew));
         }
 
     }
