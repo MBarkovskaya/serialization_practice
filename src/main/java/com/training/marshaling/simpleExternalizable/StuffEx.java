@@ -13,17 +13,18 @@ public abstract class StuffEx implements Externalizable {
     }
 
     public StuffEx(Long id) {
+        this.id = id;
     }
 
 
     @Override
     public void writeExternal(ObjectOutput out) throws IOException {
-        out.writeLong(getId());
+        out.writeObject(id);
     }
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-        in.readLong();
+        id = (Long) in.readObject();
     }
 
     public Long getId() {

@@ -29,9 +29,9 @@ public class AuthorEx implements Externalizable {
 
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-        this.firstName = in.readUTF();
-        this.lastName = in.readUTF();
-        this.genre = in.readUTF();
+        firstName = in.readUTF();
+        lastName = in.readUTF();
+        genre = in.readUTF();
     }
 
     public String getFirstName() {

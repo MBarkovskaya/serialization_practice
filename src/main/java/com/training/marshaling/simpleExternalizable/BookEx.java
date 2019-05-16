@@ -38,11 +38,11 @@ public class BookEx extends StuffEx {
     @Override
     public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
         super.readExternal(in);
-        this.title = in.readUTF();
-        this.authors = (List<AuthorEx>) in.readObject();
-        this.numberOfPages = in.readInt();
-        this.yearOfEdition = in.readInt();
-        this.cost = in.readDouble();
+        title = in.readUTF();
+        authors = (List<AuthorEx>) in.readObject();
+        numberOfPages = in.readInt();
+        yearOfEdition = in.readInt();
+        cost = in.readDouble();
     }
 
     public String getTitle() {
